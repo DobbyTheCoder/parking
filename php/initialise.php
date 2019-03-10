@@ -40,6 +40,16 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+
+$sql = "INSERT INTO spot (p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12)
+VALUES (1,0,1,1,0,0,0,0,1,1,0,0);";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 header("Location: 2wheeler.php");
 $conn->close();
 ?>

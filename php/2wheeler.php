@@ -273,3 +273,5 @@ if ($conn->connect_error) {
    echo json_encode($j);
  	 ?>;
 </script>
+</body>
+</html>
