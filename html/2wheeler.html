@@ -1,4 +1,17 @@
-<html>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "parking"
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <head>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +68,7 @@
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
       </div>
-    </div> 
+    </div>
     <div class="park-spot card border rounded" id = "p5">
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
@@ -65,7 +78,7 @@
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
       </div>
-    </div> 
+    </div>
   </div>
    <div class="card-group" style = "margin-top: 25px">
     <div class="park-spot card border rounded" id = "p7" style = "height: 250px;">
@@ -87,7 +100,7 @@
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
       </div>
-    </div> 
+    </div>
     <div class="park-spot card border rounded bg-secondary" id = "p11">
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
@@ -97,18 +110,13 @@
       <div class="card-body text-center">
         <p class="card-text">Some text inside the fourth card</p>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
 
 <script>
-  //document.getElementById("p12").className = "card bg-info";
+  var p = <?php
+	$sql = "SELECT p1 FROM spot";
+	$result = $conn->query($sql);
+	echo json_encode($result); ?>;
 </script>
-
-
-
-
-
-
-
-

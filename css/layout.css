@@ -1,3 +1,6 @@
 .park-spot{
-	background-color: green;
+
+	cursor: pointer;
+	color: white;
+	transition: 0.4s;
 }
